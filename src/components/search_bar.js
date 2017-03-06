@@ -7,16 +7,25 @@ class SearchBar extends Component {
     super(props)
 
     this.state = { location: '' }
+
+    this.onInputChange = this.onInputChange.bind(this)
   }
+
   render() {
     return (
       <div>
         <input
           value={this.state.location}
-          onChange={event => this.setState({ location: event.target.value })} />
-        <input type="submit" />
+          onChange={this.onInputChange} />
       </div>
     )
+  }
+
+  onInputChange(event) {
+    this.setState({ location: event.target.value })
+    if (this.state.location.length === 4) {
+      this.props.onLocationChange(event.target.value)
+    }
   }
 }
 
