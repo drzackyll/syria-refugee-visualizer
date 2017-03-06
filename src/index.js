@@ -26,7 +26,6 @@ class App extends Component {
     return (
       <div>
         Please type your 5-digit Zip Code <SearchBar onLocationChange={location => this.populationSearch(location)} />
-        <div>The population in your Zip Code is {this.state.population}</div>
         <Visualizer population={this.state.population} />
       </div>
     );
