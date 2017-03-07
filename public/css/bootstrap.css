@@ -6754,4 +6754,13 @@ button.close {
     display: none !important;
   }
 }
+
+.container-table {
+  display: table
+}
+
+.vertical-center-row {
+  display: table-cell
+  vertical-align: middle
+}
 /*# sourceMappingURL=bootstrap.css.map */

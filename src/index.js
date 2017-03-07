@@ -10,8 +10,6 @@ class App extends Component {
     super(props)
 
     this.state = { population: "" }
-
-    this.populationSearch("11211")
   }
 
   populationSearch(location) {
@@ -25,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Please type your 5-digit Zip Code <SearchBar onLocationChange={location => this.populationSearch(location)} />
+        <SearchBar onLocationChange={location => this.populationSearch(location)} />
         <Visualizer population={this.state.population} />
       </div>
     );
