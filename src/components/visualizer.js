@@ -16,7 +16,9 @@ class Visualizer extends Component {
   }
 
   selectOptions() {
-    return DATA.map((factoid, index) => <option value={factoid.value} key={index}>{factoid.fact}</option>)
+    return DATA.map(
+      (factoid, index) => <option value={factoid.value} key={index}>{factoid.fact}</option>
+    )
   }
 
   numberWithCommas(x) {
@@ -55,7 +57,7 @@ class Visualizer extends Component {
     return (
       <div className="container-fluid">
         <div style={{textAlign: "center"}}>
-          <select onChange={this.handleChange}>
+          <select id="select-box" onChange={this.handleChange}>
             {this.selectOptions()}
           </select>
           <br />
