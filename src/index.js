@@ -13,11 +13,15 @@ class App extends Component {
   }
 
   populationSearch(location) {
-    Axios.get(
-      `http://api.census.gov/data/2013/acs5?get=NAME,B01001_001E&for=zip+code+tabulation+area:${location}&key=${API_KEY}`
-    ).then(
-      response => this.setState({ population: response.data[1][1] })
-    )
+    if (location !== "") {
+      Axios.get(
+        `http://api.census.gov/data/2013/acs5?get=NAME,B01001_001E&for=zip+code+tabulation+area:${location}&key=${API_KEY}`
+      ).then(
+        response => this.setState({ population: response.data[1][1] })
+      )
+    } else {
+      this.setState({ population: "" })
+    }
   }
 
   render() {
