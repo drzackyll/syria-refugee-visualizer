@@ -15,7 +15,7 @@ class App extends Component {
   populationSearch(location) {
     if (location.length === 5) {
       $.ajax({
-        url: `http://api.census.gov/data/2013/acs5?get=NAME,B01001_001E&for=zip+code+tabulation+area:${location}&key=${API_KEY}`,
+        url: `https://api.census.gov/data/2013/acs5?get=NAME,B01001_001E&for=zip+code+tabulation+area:${location}&key=${API_KEY}`,
         type: "GET",
         dataType: "json"
       }).then(
