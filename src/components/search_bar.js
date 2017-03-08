@@ -24,6 +24,7 @@ class SearchBar extends Component {
   // }
 
   displayRepresentatives() {
+    debugger
     this.refs.simpleDialog.show()
   }
 

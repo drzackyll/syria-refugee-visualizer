@@ -32,6 +32,7 @@ class App extends Component {
       $.ajax({
         url: `http://whoismyrepresentative.com/getall_mems.php?zip=${location}&output=json`,
         type: "GET",
+        Upgrade-Insecure-Requests: 1,
         headers: { 'Access-Control-Allow-Origin': '*' },
         dataType: "json",
         crossDomain: true
