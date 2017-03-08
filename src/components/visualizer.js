@@ -17,7 +17,7 @@ class Visualizer extends Component {
 
   selectOptions() {
     return DATA.map(
-      (factoid, index) => <option value={factoid.value} key={index}>{factoid.fact}</option>
+      (factoid, index) => <option style={{textAlign: "center"}} value={factoid.value} key={index}>{factoid.fact}</option>
     )
   }
 
@@ -67,7 +67,7 @@ class Visualizer extends Component {
 
         <div className="row">
           <div className="col-xs-6">
-            <h4>{(population ? `Number of people in your location: ${this.numberWithCommas(population)}` : "")}</h4>
+            <h4>{(population ? `Number of people in your zip code: ${this.numberWithCommas(population)}` : "")}</h4>
           </div>
           <div className="col-xs-6">
             <h4>{(children.length > 0 ? `Number of Syrians: ~${this.numberWithCommas(children.length * 1000)}` : "")}</h4>

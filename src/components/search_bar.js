@@ -16,6 +16,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="container-fluid">
+      <input className="button" type="button" value="donate" />
         <div className="row" style={{backgroundColor: "rgb(228, 243, 252)", textAlign: "center"}}>
         <h1 id="title">Syrian Children Under Seige</h1>
           <div style={{textAlign: "center"}}>
@@ -52,9 +53,12 @@ class SearchBar extends Component {
     if (event.target.value.length === 5) {
       this.props.onLocationChange(event.target.value)
       document.getElementById('select-box').style.visibility = 'visible'
+
       $('#title').animate({
         left: "-=30%"
       })
+
+      setTimeout(() => {$('.button').css("visibility", "visible")}, 2000)
     }
   }
 }

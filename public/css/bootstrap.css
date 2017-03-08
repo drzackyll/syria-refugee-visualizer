@@ -6773,16 +6773,15 @@ button.close {
     color: rgb(83, 181, 238);
     position: relative;
 }
-.r2 {
-    right: 200px
+
+.button {
+  background-color: rgb(221, 62, 42);
+  border-radius: 4px;
+  color: white;
+  padding: 6px 20px;
+  border: 0;
+  visibility: hidden;
 }
-#menu {
-    background: #333;
-    color: #fff;
-    position: fixed;
-    right: 0;
-    top: 30px;
-    width: 100px;
-    z-index: -1;
-}
+.button:hover {
+  background-color: rgb(181, 51, 34);
 }
