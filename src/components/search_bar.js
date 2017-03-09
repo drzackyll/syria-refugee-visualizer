@@ -31,8 +31,8 @@ class SearchBar extends Component {
           <div style={{textAlign: "center"}}>
             {member.chamber === "house" ? "Congressperson" : "Senator"} {member.first_name} {member.last_name}<br />
             {tel}<br />
-            <a href={fb} target="_blank"><img className="fbook" src="../../images/fb.png" alt="Facebook" /></a>
-            <a href={twit} target="_blank"><img className="tweet" src="../../images/tweetbutton.png" alt="Twitter" /></a><br />
+            <a href={fb} target="_blank"><img className="fbook" src="../../images/facebookbutton.png" alt="Facebook" /></a>
+            <a href={twit} target="_blank"><img className="tweet" src="../../images/twitterbutton.png" alt="Twitter" /></a><br />
             <br />
           </div>
         )
@@ -82,13 +82,7 @@ class SearchBar extends Component {
           <h3 id="title">How Big is the Syrian Refugee Crisis?</h3>
           <div style={{textAlign: "center"}}>
             <input
-              className="text-center"
-              style={{
-                fontSize: "20px",
-                color: "rgb(83, 181, 238)",
-                backgroundColor: "rgb(228, 243, 252)",
-                border: "transparent"
-                }}
+              className="text-center search-bar"
               type="number"
               value={this.state.location}
               onChange={this.onInputChange}

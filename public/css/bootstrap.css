@@ -6798,3 +6798,14 @@ button.close {
   width: 5%;
   height: 5%;
 }
+
+.search-bar {
+  font-size: 20px;
+  color: rgb(83, 181, 238);
+  background-color: rgb(228, 243, 252);
+  border: transparent;
+}
+
+.data {
+  text-align: center;
+}
