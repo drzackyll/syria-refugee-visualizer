@@ -11,7 +11,7 @@ class Visualizer extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { children: [] }
+    this.state = { syrians: [] }
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -22,7 +22,7 @@ class Visualizer extends Component {
   }
 
   numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   showIcons(number) {
@@ -46,23 +46,24 @@ class Visualizer extends Component {
         <img src='../../images/child-red.png' key={step} alt='red icon' />
       )
     }
-
-    this.setState({ children: array })
+    this.setState({ syrians: array })
   }
 
   render() {
     const population = this.props.population
-    const children = this.state.children
+    const syrians = this.state.syrians
 
     return (
       <div className="container-fluid">
-        <div style={{textAlign: "center"}}>
+        <div className="row">
+          <div className="col-xs-6">
+            {(population ? "Each figure represents 1000 people" : "")}
+          </div>
+          <div className="col-xs-6">
           <select id="select-box" onChange={this.handleChange}>
-            {this.selectOptions()}
+          {this.selectOptions()}
           </select>
-          <br />
-          {(population ? "Each figure represents 1000 people" : "")}
-          <br />
+          </div>
         </div>
 
         <div className="row">
@@ -70,7 +71,7 @@ class Visualizer extends Component {
             <h4>{(population ? `Number of people in your zip code: ${this.numberWithCommas(population)}` : "")}</h4>
           </div>
           <div className="col-xs-6">
-            <h4>{(children.length > 0 ? `Number of Syrians: ~${this.numberWithCommas(children.length * 1000)}` : "")}</h4>
+            <h4>{(syrians.length > 0 && population !== "" ? `~${this.numberWithCommas(syrians.length * 1000)}` : "")}</h4>
           </div>
         </div>
 
@@ -79,7 +80,7 @@ class Visualizer extends Component {
             {this.showIcons(population)}
           </div>
           <div className="col-xs-6">
-            {children}
+            {population === "" ? [] : syrians}
           </div>
         </div>
       </div>

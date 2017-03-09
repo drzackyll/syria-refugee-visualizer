@@ -6785,3 +6785,16 @@ button.close {
 .button:hover {
   background-color: rgb(181, 51, 34);
 }
+.donate {
+  background-color: rgb(83, 181, 238);
+}
+
+.tweet {
+  width: 10%;
+  height: 10%;
+}
+
+.fbook {
+  width: 5%;
+  height: 5%;
+}

@@ -9,10 +9,11 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { population: "", representatives: {} }
+    this.state = { population: "", representatives: {}, location: ""}
   }
 
   populationSearch(location) {
+    this.setState({ location })
     if (location.length === 5) {
       $.ajax({
         url: `https://api.census.gov/data/2013/acs5?get=NAME,B01001_001E&for=zip+code+tabulation+area:${location}&key=${API_KEY}`,
@@ -30,15 +31,11 @@ class App extends Component {
   representativeSearch(location) {
     if (location.length === 5) {
       $.ajax({
-        url: `http://whoismyrepresentative.com/getall_mems.php?zip=${location}&output=json`,
+        url: `https://congress.api.sunlightfoundation.com/legislators/locate?zip=${location}`,
         type: "GET",
-        Upgrade-Insecure-Requests: 1,
-        headers: { 'Access-Control-Allow-Origin': '*' },
-        dataType: "json",
-        crossDomain: true
+        dataType: "json"
       }).then(
-        response => console.log(response)
-        // response => this.setState({ representatives: response })
+        response => this.setState({ representatives: response })
       )
     } else {
       this.setState({ representatives: {} })
@@ -49,7 +46,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar  reps={this.state.representatives} onLocationChange={location => this.populationSearch(location)} />
-        <Visualizer reps={this.state.representatives} population={this.state.population} />
+        <Visualizer population={this.state.population} location={this.state.location} />
       </div>
     );
   }
