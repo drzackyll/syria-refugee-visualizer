@@ -31,7 +31,7 @@ class App extends Component {
   representativeSearch(location) {
     if (location.length === 5) {
       $.ajax({
-        url: `https://congress.api.sunlightfoundation.com/legislators/locate?zip=${location}&apikey=91mTqXFEeSaCIbjC0fuaB1RABk4HANqS4I91qRBN`,
+        url: `https://congress.api.sunlightfoundation.com/legislators/locate?zip=${location}`,
         type: "GET",
         dataType: "json"
       }).then(

@@ -28,7 +28,7 @@ class SearchBar extends Component {
         if (member.twitter_id) { twit = `https://twitter.com/intent/tweet?screen_name=${member.twitter_id}` }
 
         return (
-          <div style={{textAlign: "center"}}>
+          <div key={member.govtrack_id} style={{textAlign: "center"}}>
             {member.chamber === "house" ? "Congressperson" : "Senator"} {member.first_name} {member.last_name}<br />
             {tel}<br />
             <a href={fb} target="_blank"><img className="fbook" src="../../images/facebookbutton.png" alt="Facebook" /></a>
