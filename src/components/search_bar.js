@@ -9,6 +9,7 @@ class SearchBar extends Component {
     this.state = { location: '', representativeInfo: [], animate: false }
     this.onInputChange = this.onInputChange.bind(this)
     this.displayRepresentatives = this.displayRepresentatives.bind(this)
+    this.handleAboutClick = this.handleAboutClick.bind(this)
   }
 
   componentDidMount() {
@@ -65,17 +66,29 @@ class SearchBar extends Component {
     }
   }
 
+  handleAboutClick() {
+    this.refs.aboutDialog.show()
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <div className="row" style={{backgroundColor: "rgb(228, 243, 252)", textAlign: "right"}}>
+          <input className="button" type="button" value="about" onClick={this.handleAboutClick} />
           <input className="donate button" type="button" value="donate" onClick={this.handleDonateClick} />
           <input className="button" type="button" value="advocate" onClick={this.displayRepresentatives} />
         </div>
 
-        <SkyLight hideOnOverlayClicked dialogStyles={{height: "auto"}} ref="simpleDialog" title="Contact Your Representatives">
-            Let your representatives in Congress know that you support assistance for Syrian refugees.
-            {this.state.representativeInfo}
+        <SkyLight hideOnOverlayClicked dialogStyles={{height: "auto"}} ref="aboutDialog" title="About">
+          See how the size of the population where you live compares to the scale of crises around the world. We need a strong international development budget now more than ever. Please make your voice heard, and if you can donate to worthy international organizations, please do.<br />
+          <br />
+          Thanks to the <a href="https://www.census.gov/developers/">Census API (2013)</a> and the <a href="https://propublica.github.io/congress-api-docs/">ProPublica Congress API</a> for access.<br />
+          - Zack Adams
+        </SkyLight>
+
+        <SkyLight hideOnOverlayClicked dialogStyles={{height: "auto"}} ref="advocateDialog" title="Contact Your Representatives">
+          Let your representatives in Congress know that you support assistance for Syrian refugees.
+          {this.state.representativeInfo}
         </SkyLight>
 
         <div className="row" style={{backgroundColor: "rgb(228, 243, 252)", textAlign: "center"}}>
