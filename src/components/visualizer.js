@@ -3,7 +3,7 @@ const DATA = [
   {fact: "Please select", value: "", url: ""},
   {fact: "How many Syrian children are refugees?", value: "500", url: "https://www.unicefusa.org/mission/emergencies/child-refugees/syria-crisis"},
   {fact: "How many Syrian children are out of school?", value: "560", url: "https://www.unicefusa.org/mission/emergencies/child-refugees/syria-crisis"},
-  {fact: "How many Syrians has the US admitted since 2016?", value: "2.4", url: "http://www.pewresearch.org/fact-tank/2017/01/30/key-facts-about-refugees-to-the-u-s/"},
+  {fact: "How many Syrians has the US admitted since 2016?", value: "2", url: "http://www.pewresearch.org/fact-tank/2017/01/30/key-facts-about-refugees-to-the-u-s/"},
   {fact: "How many children live in conflict zones worldwide?", value: "50000", url: "http://www.dw.com/en/unicef-one-in-nine-children-live-in-conflict-zones/a-19005359"},
   {fact: "How many people are displaced by climate change (2009)?", value: "4000", url: "http://www.unhcr.org/4b2910239.html"},
   {fact: "How many may be displaced by climate change by 2050 (estimate)?", value: "50000", url: "http://www.glogov.org/images/doc/equitybd.pdf"}
@@ -44,17 +44,22 @@ class Visualizer extends Component {
 
   handleChange(event) {
     let array = []
-    for (let step = 0; step < Math.floor(event.target.value) - 1; step++) {
+    if (event.target.selectedIndex === 6 || event.target.selectedIndex === 4) {
+      array.push(<div>Trying to render enough images to represent 250 million people could crash your browser. So we will not. Just imagine what 50,000 person-images looks like.</div>)
+      array.length = 50000
+    } else {
+      for (let step = 0; step < Math.floor(event.target.value) - 1; step++) {
+        array.push(
+          <img src='../../images/child-red.png' key={step} alt='red icon' />
+        )
+      }
       array.push(
-        <img src='../../images/child-red.png' key={step} alt='red icon' />
-      )
-    }
-    array.push(
-      <div key={array.length}>
+        <div key={array.length}>
         <br />
         <h5><a target="_blank" href={event.target[event.target.selectedIndex].dataset.url}>Source</a></h5>
-      </div>
-    )
+        </div>
+      )
+    }
     this.setState({ syrians: array })
   }
 
