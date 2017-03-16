@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: 'Merriweather', serif;
+  font-family: "Hammersmith One", serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -1084,7 +1084,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Merriweather", serif;
+  font-family: "Hammersmith One", serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -6770,12 +6770,12 @@ button.close {
 
 /*Custom*/
 #title {
-    color: gray;
+    color: #E9E9E9;
     position: relative;
 }
 
 .button {
-  background-color: rgb(221, 62, 42);
+  background-color: #CDCDCD;
   border-radius: 4px;
   color: white;
   padding: 6px 20px;
@@ -6783,10 +6783,10 @@ button.close {
   visibility: hidden;
 }
 .button:hover {
-  background-color: rgb(181, 51, 34);
+  background-color: #E9E9E9;
 }
 .donate {
-  background-color: rgb(83, 181, 238);
+  background-color: #99D3Df;
 }
 
 .tweet {
@@ -6801,8 +6801,8 @@ button.close {
 
 .search-bar {
   font-size: 20px;
-  color: rgb(83, 181, 238);
-  background-color: rgb(228, 243, 252);
+  color: #CDCDCD;
+  background-color: #88BBD6;
   border: transparent;
 }
 

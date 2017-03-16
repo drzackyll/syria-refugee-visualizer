@@ -14,6 +14,7 @@ class SearchBar extends Component {
 
   componentDidMount() {
     document.getElementById('select-box').style.visibility = 'hidden'
+    document.getElementById('landing-image').innerHTML = "<img src='../../images/refugee_camp.jpg' style='height:100%;width:100%' id='landed' alt='refugee camp' />"
   }
 
   handleDonateClick() {
@@ -40,7 +41,7 @@ class SearchBar extends Component {
       }
     )
     this.setState({ representativeInfo: repArray })
-    this.refs.simpleDialog.show()
+    this.refs.advocateDialog.show()
   }
 
   onInputChange(event) {
@@ -53,11 +54,13 @@ class SearchBar extends Component {
       $('.button').css("visibility", "hidden")
       this.props.onLocationChange(event.target.value)
       document.getElementById('select-box').style.visibility = 'hidden'
+      document.getElementById('landing-image').innerHTML = "<img src='../../images/refugee_camp.jpg' style='height:100%;width:100%' id='landed' alt='refugee camp' />"
     }
 
     if (event.target.value.length === 5) {
       this.props.onLocationChange(event.target.value)
       document.getElementById('select-box').style.visibility = 'visible'
+      document.getElementById('landing-image').innerHTML = ""
       if (this.state.animate === false) {
         $('#title').animate({ left: "-=30%" })
         this.setState({ animate: true })
@@ -73,7 +76,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row" style={{backgroundColor: "rgb(228, 243, 252)", textAlign: "right"}}>
+        <div className="row" style={{backgroundColor: "#88BBD6", textAlign: "right"}}>
           <input className="button" type="button" value="about" onClick={this.handleAboutClick} />
           <input className="donate button" type="button" value="donate" onClick={this.handleDonateClick} />
           <input className="button" type="button" value="advocate" onClick={this.displayRepresentatives} />
@@ -87,12 +90,12 @@ class SearchBar extends Component {
         </SkyLight>
 
         <SkyLight hideOnOverlayClicked dialogStyles={{height: "auto"}} ref="advocateDialog" title="Contact Your Representatives">
-          Let your representatives in Congress know that you support assistance for Syrian refugees.
+          Let your representatives know you support the important international affairs budget.
           {this.state.representativeInfo}
         </SkyLight>
 
-        <div className="row" style={{backgroundColor: "rgb(228, 243, 252)", textAlign: "center"}}>
-          <h3 id="title">How Big is the Syrian Refugee Crisis?</h3>
+        <div className="row" style={{backgroundColor: "#88BBD6", textAlign: "center"}}>
+          <h2 id="title">How big are the world's problems?</h2>
           <div style={{textAlign: "center"}}>
             <input
               className="text-center search-bar"

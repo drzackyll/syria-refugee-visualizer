@@ -35,6 +35,7 @@ class App extends Component {
         type: "GET",
         dataType: "json"
       }).then(
+        // response => console.log(response)
         response => this.setState({ representatives: response })
       )
     } else {
