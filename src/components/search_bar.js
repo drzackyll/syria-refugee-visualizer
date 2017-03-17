@@ -85,6 +85,7 @@ class SearchBar extends Component {
         <SkyLight hideOnOverlayClicked dialogStyles={{height: "auto"}} ref="aboutDialog" title="About">
           See how the size of the population where you live compares to the scale of crises around the world. We need a strong international development budget now more than ever. Please make your voice heard, and if you can donate to worthy international organizations, please do.<br />
           <br />
+          Many of the figures are rounded.<br />
           Thanks to the <a href="https://www.census.gov/developers/">Census API (2013)</a> and the <a href="https://propublica.github.io/congress-api-docs/">ProPublica Congress API</a> for access.<br />
           Image source: <a href="https://commons.wikimedia.org/wiki/File:An_Aerial_View_of_the_Za%27atri_Refugee_Camp.jpg">Wikimedia Commons</a>
           - Zack Adams
