@@ -92,7 +92,7 @@ class Visualizer extends Component {
           <h4>{(refugees.length > 0 && population !== "" ?
             `~${this.numberWithCommas(refugees.length * 5000)}` :
             ""
-          )}</h4><br />
+          )}</h4>
           {population === "" ? [] : refugees}
           </div>
         </div>
