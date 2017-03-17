@@ -75,38 +75,25 @@ class Visualizer extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-        <div id="landing-image"></div>
+          <div id="landing-image"></div>
           <div className="col-md-6">
-            {(population ? "Each figure represents 5000 people" : "")}
-          </div>
-          <div className="col-md-6">
-          <select id="select-box" onChange={this.handleChange}>
-          {this.selectOptions()}
-          </select>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-6">
+            {(population ? "Each figure represents 5000 people" : "")}<br />
             <h4>{(population ?
               `Number of people in your zip code: ${this.numberWithCommas(population)}` :
               ""
             )}</h4>
-          </div>
-          <div className="col-md-6">
-            <h4>{(refugees.length > 0 && population !== "" ?
-              `~${this.numberWithCommas(refugees.length * 5000)}` :
-              ""
-            )}</h4>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-md-6">
             {this.showIcons(population)}
+            <br /><br />
           </div>
           <div className="col-md-6">
-            {population === "" ? [] : refugees}
+          <select id="select-box" onChange={this.handleChange}>
+          {this.selectOptions()}
+          </select><br />
+          <h4>{(refugees.length > 0 && population !== "" ?
+            `~${this.numberWithCommas(refugees.length * 5000)}` :
+            ""
+          )}</h4><br />
+          {population === "" ? [] : refugees}
           </div>
         </div>
       </div>

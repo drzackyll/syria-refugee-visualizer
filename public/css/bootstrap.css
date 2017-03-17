@@ -6812,7 +6812,7 @@ button.close {
 
 @media only screen and (max-width: 40em) {
   #select-box {
-    width: 150px !important;
+    width: 100% !important;
   }
   .data {
     font-size: 8px;
