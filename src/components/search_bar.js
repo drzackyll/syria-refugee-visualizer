@@ -47,9 +47,11 @@ class SearchBar extends Component {
   onInputChange(event) {
     this.setState({ location: event.target.value })
     if (event.target.value.length < 5) {
-      if(this.state.animate === true) {
-        $('#title').animate({ left: "+=30%" })
-        this.setState({ animate: false })
+      if ( $(window).width() > 769) {
+        if(this.state.animate === true) {
+          $('#title').animate({ left: "+=30%" })
+          this.setState({ animate: false })
+        }
       }
       $('.button').css("visibility", "hidden")
       this.props.onLocationChange(event.target.value)
@@ -61,9 +63,11 @@ class SearchBar extends Component {
       this.props.onLocationChange(event.target.value)
       document.getElementById('select-box').style.visibility = 'visible'
       document.getElementById('landing-image').innerHTML = ""
-      if (this.state.animate === false) {
-        $('#title').animate({ left: "-=30%" })
-        this.setState({ animate: true })
+      if ( $(window).width() > 769) {
+        if (this.state.animate === false) {
+          $('#title').animate({ left: "-=30%" })
+          this.setState({ animate: true })
+        }
       }
       setTimeout(() => {$('.button').css("visibility", "visible")}, 1000)
     }
