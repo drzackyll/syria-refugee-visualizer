@@ -87,7 +87,7 @@ class SearchBar extends Component {
           <br />
           Many of the figures are rounded.<br />
           Thanks to the <a href="https://www.census.gov/developers/">Census API (2013)</a> and the <a href="https://propublica.github.io/congress-api-docs/">ProPublica Congress API</a> for access.<br />
-          Image source: <a href="https://commons.wikimedia.org/wiki/File:An_Aerial_View_of_the_Za%27atri_Refugee_Camp.jpg">Wikimedia Commons</a>
+          Image source: <a href="https://commons.wikimedia.org/wiki/File:An_Aerial_View_of_the_Za%27atri_Refugee_Camp.jpg">Wikimedia Commons</a><br /><br />
           - Zack Adams
         </SkyLight>
 
