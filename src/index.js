@@ -33,7 +33,7 @@ class App extends Component {
       $.ajax({
         url: `https://congress.api.sunlightfoundation.com/legislators/locate?zip=${location}`,
         type: "GET",
-        dataType: "json"
+        dataType: "jsonp"
       }).then(
         response => this.setState({ representatives: response })
       )
