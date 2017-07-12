@@ -4,6 +4,7 @@ import SearchBar from './components/search_bar'
 import Visualizer from './components/visualizer'
 import $ from 'jquery'
 const API_KEY = "5aa83bd6f3a03ec298c39f3309e80a6ca1686b4b"
+const PROPUBLICA_API_KEY = "91mTqXFEeSaCIbjC0fuaB1RABk4HANqS4I91qRBN"
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class App extends Component {
         type: "GET",
         dataType: "json"
       }).then(
-        response => this.setState({ population: response[1][1] })
+        response => console.log(response)
       )
     } else {
       this.setState({ population: ""})
@@ -29,16 +30,22 @@ class App extends Component {
   }
 
   representativeSearch(location) {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.propublica.org/congress/v1/members/senate/ny/current.json",
+      "method": "GET",
+      "headers": {
+        "x-api-key": `${PROPUBLICA_API_KEY}`
+      }
+    }
     if (location.length === 5) {
-      $.ajax({
-        url: `https://congress.api.sunlightfoundation.com/legislators/locate?zip=${location}`,
-        type: "GET",
-        dataType: "json"
-      }).then(
-        response => this.setState({ representatives: response })
+      $.ajax(settings).then(
+        response => console.log(response)
       )
     } else {
       this.setState({ representatives: {} })
+      console.log("nope")
     }
   }
 
