@@ -14,7 +14,7 @@ class SearchBar extends Component {
 
   componentDidMount() {
     document.getElementById('select-box').style.visibility = 'hidden'
-    document.getElementById('landing-image').innerHTML = "<img src='../../images/refugee_camp.jpg' style='height:100%;width:100%' id='landed' alt='refugee camp' />"
+    document.getElementById('landing-image').innerHTML = "<img src='../../images/refugee_camp.jpg' id='landed' alt='refugee camp' />"
   }
 
   handleDonateClick() {
@@ -47,7 +47,7 @@ class SearchBar extends Component {
   onInputChange(event) {
     this.setState({ location: event.target.value })
     if (event.target.value.length < 5) {
-      if ( $(window).width() > 769) {
+      if ( $(window).width() > 1100) {
         if(this.state.animate === true) {
           $('#title').animate({ left: "+=30%" })
           this.setState({ animate: false })
@@ -56,14 +56,14 @@ class SearchBar extends Component {
       $('.button').css("visibility", "hidden")
       this.props.onLocationChange(event.target.value)
       document.getElementById('select-box').style.visibility = 'hidden'
-      document.getElementById('landing-image').innerHTML = "<img src='../../images/refugee_camp.jpg' style='height:100%;width:100%' id='landed' alt='refugee camp' />"
+      document.getElementById('landing-image').innerHTML = "<img src='../../images/refugee_camp.jpg' id='landed' alt='refugee camp' />"
     }
 
     if (event.target.value.length === 5) {
       this.props.onLocationChange(event.target.value)
       document.getElementById('select-box').style.visibility = 'visible'
       document.getElementById('landing-image').innerHTML = ""
-      if ( $(window).width() > 769) {
+      if ( $(window).width() > 1100) {
         if (this.state.animate === false) {
           $('#title').animate({ left: "-=30%" })
           this.setState({ animate: true })

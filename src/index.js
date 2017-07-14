@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SearchBar  reps={this.state.representatives} onLocationChange={location => this.populationSearch(location)} />
+        <SearchBar reps={this.state.representatives} onLocationChange={location => this.populationSearch(location)} />
         <Visualizer population={this.state.population} location={this.state.location} />
       </div>
     );
