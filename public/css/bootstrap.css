@@ -6762,8 +6762,8 @@ button.close {
 }
 
 .vertical-center-row {
-  display: table-cell
-  vertical-align: middle
+  display: table-cell;
+  vertical-align: middle;
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
@@ -6790,13 +6790,11 @@ button.close {
 }
 
 .tweet {
-  width: 10%;
-  height: 10%;
+  width: 30%;
 }
 
 .fbook {
-  width: 5%;
-  height: 5%;
+  width: 15%;
 }
 
 .search-bar {
